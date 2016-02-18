@@ -138,15 +138,7 @@ function httpHandler( request, response ){
 		response.writeHead(404, {"Content-Type": "text/plain"});
 		response.end('not found');
 	}
-}
-if (config.httpsServerPort) {
-	var serverssl = https.createServer(options, httpHandler)
-	serverssl.listen( config.httpsServerPort );
-}
-if (config.httpServerPort) {
-	var server = http.createServer(httpHandler);
-	server.listen( config.httpServerPort );
-}
+
 
 
 setInterval(function(){
